@@ -1,7 +1,7 @@
 # Design Specs - Modul Ports
-| Version       | Owner         | Description   | Reviewer  | Date  | 
+| Version       | Owner         | Description   | Reviewer  | Date  |  Internal Service name  | Port  | 
 | -             | :-:           | -             | -         | -     |
-| 0.1           | Jay           |  Imports // Exposes API for 'searchcontroller'             |           |    23.05.2018   |
+| 0.1           | Jay           |  Imports // Exposes API for 'searchcontroller'             |           |    23.05.2018   |ports   |8000  |
 
 
 ## End Points
