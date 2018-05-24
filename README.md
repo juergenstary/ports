@@ -104,17 +104,17 @@ Deletes entries from DB Ports (1 request - 1 delete per ID)
 use DB_Ports
 
 {
-    "Change": "",
-    "CountryLocation": "AUADL",
-    "Name": "Adelaide
-    "NameWoDiacritics": "Adelaide",
-    "Subdivision": "SA"
-    "Status": "AC",
-    "Function": "12345---"
-    "Date": "0307",
-    "IATA": ""
-    "Coordinates": "34555 13835E",
-    "Remarks": ""
+    "Change": string,
+    "CountryLocation": string,
+    "Name": string
+    "NameWoDiacritics": string
+    "Subdivision": string
+    "Status": string
+    "Function": string
+    "Date": string
+    "IATA": string
+    "Coordinates": string
+    "Remarks": string
 }
 ```
 ## Focus
