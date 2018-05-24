@@ -22,7 +22,7 @@ Requires parameters from search controller
     "Auth": Token,
     "CountryLocation": "AUADL",
     "Name": "Adelaide
-  }
+}
   ```
   
 **Output**
@@ -39,7 +39,7 @@ Requires parameters from search controller
     "IATA": ""
     "Coordinates": "34555 13835E",
     "Remarks": ""
-  }
+}
   ```
   
   **Endpoint name**
@@ -56,14 +56,14 @@ Imports data from defined datasource (https://datahub.io/core/un-locode)
 {
     "Auth": Token,
     "TriggerImport": "True",
-  }
+}
   ```
 **Output**
 
 ```JSON
 {
     "Success": "True/False"
-  }
+}
   ```
   
   **Endpoint name**
@@ -81,14 +81,14 @@ Deletes entries from DB Ports (1 request - 1 delete per ID)
     "Auth": Token,
     "ID": "12345678",
    
-  }
+}
   ```
 **Output**
 
 ```JSON
 {
     "Success": "True/False"
-  }
+}
   ```
 ## Technology
 
@@ -113,7 +113,7 @@ use DB_Ports
     "IATA": ""
     "Coordinates": "34555 13835E",
     "Remarks": ""
-  }
+}
 ```
 ## Focus
 * Performance: 200ms
