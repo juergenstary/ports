@@ -7,10 +7,15 @@
 ## End Points
 
 **Endpoint name**
+
 [GET] getPorts 
+
 **Description**
+
 Returns JSON object - if result is found - to 'searchcontroller'
+
 Requires parameters from search controller
+
 **Input**
 ```JSON
 {
@@ -19,6 +24,7 @@ Requires parameters from search controller
     "Name": "Adelaide
   }
   ```
+  
 **Output**
 ```JSON
 {
@@ -37,10 +43,15 @@ Requires parameters from search controller
   ```
   
   **Endpoint name**
+  
 [GET] putPorts 
+
 **Description**
+
 Imports data from defined datasource (https://datahub.io/core/un-locode)
+
 **Input**
+
 ```JSON
 {
     "Auth": Token,
@@ -48,6 +59,7 @@ Imports data from defined datasource (https://datahub.io/core/un-locode)
   }
   ```
 **Output**
+
 ```JSON
 {
     "Success": "True/False"
@@ -55,10 +67,15 @@ Imports data from defined datasource (https://datahub.io/core/un-locode)
   ```
   
   **Endpoint name**
+  
 [GET] DeletePorts 
+
 **Description**
+
 Deletes entries from DB Ports (1 request - 1 delete per ID)
+
 **Input**
+
 ```JSON
 {
     "Auth": Token,
@@ -67,13 +84,12 @@ Deletes entries from DB Ports (1 request - 1 delete per ID)
   }
   ```
 **Output**
+
 ```JSON
 {
     "Success": "True/False"
   }
   ```
-
-
 ## Technology
 
 * Language: Python 3.6
