@@ -117,6 +117,8 @@ use DB_Ports
     "Remarks": string
 }
 ```
+Indexes on Countrylocation AND Name
+
 ## Focus
 * Performance: 200ms
 * Uptime: Default
