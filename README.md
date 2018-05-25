@@ -1,14 +1,13 @@
 # Design Specs - Modul Ports
-| Version       | Owner         | Description   | Reviewer  | Date  |  Internal Service name  | Port  | 
-| -             | :-:           | -             | -         | -     | -         | -     |
-| 0.1           | Jay           |  Imports // Exposes API for 'searchcontroller'             |           |    23.05.2018   |ports   |8000  |
-
+| Version       | Owner         | Description   | Reviewer  | Date  |  Internal Service name  | 
+| -             | :-:           | -             | -         | -     | -         | 
+| 0.1           | Jay           |  Imports // Exposes API for 'searchcontroller'             |           |    23.05.2018   |ports   |
 
 ## End Points
 
 **Endpoint name**
 
-[GET] getPorts 
+[GET] /port 
 
 **Description**
 
@@ -19,7 +18,6 @@ Requires parameters from search controller
 **Input**
 ```JSON
 {
-    "Auth": Token,
     "CountryLocation": "AUADL",
     "Name": "Adelaide
 }
@@ -45,7 +43,7 @@ ________________________________________
 
 **Endpoint name**
   
-[GET] putPorts 
+[PUT] /port 
 
 **Description**
 
@@ -55,33 +53,33 @@ Imports data from defined datasource (https://datahub.io/core/un-locode)
 
 ```JSON
 {
-    "Auth": Token,
-    "TriggerImport": "True",
+    "TriggerImport": true,
 }
   ```
 **Output**
 
 ```JSON
 {
-    "Success": "True/False"
+    "Success": true/false,
+    "ID": id
 }
   ```
 ________________________________________
 
 **Endpoint name**
   
-[GET] DeletePorts 
+[DELETE] /port 
 
 **Description**
 
-Deletes entries from DB Ports (1 request - 1 delete per ID)
+Softdeletes (sets validitiy field false) in DB 
 
 **Input**
 
 ```JSON
 {
-    "Auth": Token,
-    "ID": "12345678",
+    "TransactionID": int,
+    "ID": "12345678"
    
 }
   ```
@@ -89,13 +87,13 @@ Deletes entries from DB Ports (1 request - 1 delete per ID)
 
 ```JSON
 {
-    "Success": "True/False"
+    "Success": true/false
 }
   ```
 ## Technology
 
 * Language: Python 3.6
-* DB: MongoDB
+* DB: postgres
 * Caching: NA
 * Testing Framework: ?
 
@@ -117,10 +115,10 @@ use DB_Ports
     "Remarks": string
 }
 ```
-Indexes on Countrylocation AND Name
-
 ## Focus
 * Performance: 200ms
 * Uptime: Default
 * Availability: Normal
 * Data consistency: Low
+
+
