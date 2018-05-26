@@ -99,6 +99,7 @@ Softdeletes (sets validitiy field false) in DB
 
 ## DB Schema 
 ```SQL
+CREATE DATABASE ports_db;
 CREATE TABLE public.ports
 (lo_code varchar(5) NOT NULL,
 country_code varchar(2) NOT NULL,
