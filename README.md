@@ -97,23 +97,35 @@ Softdeletes (sets validitiy field false) in DB
 * Caching: NA
 * Testing Framework: ?
 
-## DB Schema (as SQL Script - JSON Structure in case of NOSQL)
-```NOSQL
-use DB_Ports
+## DB Schema 
+```SQL
+CREATE TABLE public.ports
+(lo_code varchar(5) NOT NULL,
+country_code varchar(2) NOT NULL,
+port_name varchar(100) NOT NULL,
+port_name_wo_diacritics varchar(100) NOT NULL,
+subdivision varchar(20),
+status varchar(2),
+date_reviewd date,
+coord_long float8,
+coord_lat float8,
+PRIMARY KEY (lo_code));
 
-{
-    "Change": string,
-    "CountryLocation": string,
-    "Name": string
-    "NameWoDiacritics": string
-    "Subdivision": string
-    "Status": string
-    "Function": string
-    "Date": string
-    "IATA": string
-    "Coordinates": string
-    "Remarks": string
-}
+CREATE UNIQUE INDEX unique_query
+on public.ports (lo_code);
+
+CREATE INDEX cities
+ON public.ports (port_name_wo_diacritics, port_name);
+
+CREATE TABLE public.ports_function
+("id" int4 NOT NULL,
+f_id varchar(5) NOT NULL REFERENCES public.ports (lo_code),
+port_function int2,
+PRIMARY KEY ("id")
+)
+
+CREATE INDEX functions
+ON public.ports_function (port_function);
 ```
 ## Focus
 * Performance: 200ms
