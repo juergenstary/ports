@@ -122,11 +122,9 @@ CREATE TABLE public.ports_function
 ("id" int4 NOT NULL,
 f_id varchar(5) NOT NULL REFERENCES public.ports (lo_code),
 port_function int2,
-PRIMARY KEY ("id")
-)
+PRIMARY KEY ("id"));
 
-CREATE INDEX functions
-ON public.ports_function (port_function);
+CREATE INDEX functions ON public.ports_function (port_function);
 ```
 ## Focus
 * Performance: 200ms
